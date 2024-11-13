@@ -49,3 +49,22 @@ window.addEventListener("scroll", function(){
       }
     }
   }
+
+  function toggleText(button) {
+    const moreText = button.previousElementSibling.querySelector(".more-text");
+  
+    if (moreText.style.display === "none" || moreText.style.display === "") {
+      moreText.style.display = "inline";
+      button.innerText = "See Less";
+    } else {
+      moreText.style.display = "none";
+      button.innerText = "See More";
+    }
+  }
+  
+
+  document.querySelectorAll(".see-more-btn").forEach((btn) => {
+    btn.addEventListener("click", function() {
+      toggleText(this);
+    });
+  });
